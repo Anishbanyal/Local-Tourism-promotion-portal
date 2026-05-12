@@ -8,6 +8,7 @@ st.set_page_config(
     page_title="Local Tourism Promotion Portal",
     layout="wide"
 )
+
 conn = sqlite3.connect("tourism.db", check_same_thread=False)
 c = conn.cursor()
 
