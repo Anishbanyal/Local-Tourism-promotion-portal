@@ -9,9 +9,8 @@ st.set_page_config(
     layout="wide"
 )
 
-conn = sqlite3.connect("tourism.db", check_same_thread=False)
-c = conn.cursor()
-
+conn = sqlite3.connect("tourism_users.db", check_same_thread=False)
+cursor = conn.cursor()
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
