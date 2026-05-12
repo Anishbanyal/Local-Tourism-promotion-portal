@@ -40,7 +40,7 @@ def login_user(email, password):
     return data
 
 def load_default_data():
-    return pd.read_csv(r"C:\Users\rajpu\OneDrive\Desktop\year.csv")
+    return pd.read_csv("year.csv")
 
 if "data" not in st.session_state:
     st.session_state.data = load_default_data()
