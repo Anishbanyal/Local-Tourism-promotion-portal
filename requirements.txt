@@ -1,2 +1,5 @@
 streamlit
-ploty.express
+pandas
+plotly.express
+sqlite3
+hashlib
