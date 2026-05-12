@@ -8,11 +8,8 @@ st.set_page_config(
     page_title="Local Tourism Promotion Portal",
     layout="wide"
 )
-
-DB_PATH = "tourism_users.db"
-
-conn = sqlite3.connect(DB_PATH, check_same_thread=False)
-cursor = conn.cursor()
+conn = sqlite3.connect("tourism.db", check_same_thread=False)
+c = conn.cursor()
 
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS users (
