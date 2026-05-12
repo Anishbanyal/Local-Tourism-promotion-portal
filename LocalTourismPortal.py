@@ -9,7 +9,9 @@ st.set_page_config(
     layout="wide"
 )
 
-conn = sqlite3.connect("tourism_users.db", check_same_thread=False)
+DB_PATH = "tourism_users.db"
+
+conn = sqlite3.connect(DB_PATH, check_same_thread=False)
 cursor = conn.cursor()
 
 cursor.execute("""
