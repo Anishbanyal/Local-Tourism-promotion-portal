@@ -4,23 +4,14 @@ import plotly.express as px
 import sqlite3
 import hashlib
 
-# =====================================
-# PAGE CONFIG
-# =====================================
 st.set_page_config(
     page_title="Local Tourism Promotion Portal",
     layout="wide"
 )
 
-# =====================================
-# DATABASE CONNECTION
-# =====================================
 conn = sqlite3.connect("tourism_users.db", check_same_thread=False)
 cursor = conn.cursor()
 
-# =====================================
-# CREATE USERS TABLE
-# =====================================
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -30,15 +21,9 @@ CREATE TABLE IF NOT EXISTS users (
 """)
 conn.commit()
 
-# =====================================
-# PASSWORD HASHING
-# =====================================
 def make_hash(password):
     return hashlib.sha256(str.encode(password)).hexdigest()
 
-# =====================================
-# USER FUNCTIONS
-# =====================================
 def add_user(email, password):
     cursor.execute(
         "INSERT INTO users(email,password) VALUES (?,?)",
@@ -54,9 +39,6 @@ def login_user(email, password):
     data = cursor.fetchall()
     return data
 
-# =====================================
-# LOAD DEFAULT DATASET
-# =====================================
 def load_default_data():
     return pd.read_csv(r"C:\Users\rajpu\OneDrive\Desktop\year.csv")
 
@@ -66,9 +48,6 @@ if "data" not in st.session_state:
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 
-# =====================================
-# LOGIN / REGISTER PAGE
-# =====================================
 if not st.session_state.logged_in:
 
     st.title("🏔 Local Tourism Promotion Portal")
@@ -78,9 +57,6 @@ if not st.session_state.logged_in:
         ["Login", "Register"]
     )
 
-    # =================================
-    # LOGIN PAGE
-    # =================================
     if menu == "Login":
 
         st.subheader("🔐 Login")
@@ -100,9 +76,6 @@ if not st.session_state.logged_in:
             else:
                 st.error("Invalid Email or Password")
 
-    # =================================
-    # REGISTER PAGE
-    # =================================
     elif menu == "Register":
 
         st.subheader("📝 Create New Account")
@@ -127,9 +100,6 @@ if not st.session_state.logged_in:
                 except:
                     st.error("Email Already Exists")
 
-# =====================================
-# MAIN APP AFTER LOGIN
-# =====================================
 else:
 
     st.sidebar.success("Logged In")
@@ -141,9 +111,6 @@ else:
     st.title("🏔 Local Tourism Promotion Portal")
     st.subheader("Tourism Analytics Dashboard")
 
-    # =================================
-    # SIDEBAR MENU
-    # =================================
     st.sidebar.title("Navigation")
 
     menu = st.sidebar.radio(
@@ -159,9 +126,6 @@ else:
         ]
     )
 
-    # =================================
-    # HOME
-    # =================================
     if menu == "Home":
 
         st.image(
@@ -188,9 +152,6 @@ else:
         ✔ Best Time Prediction  
         """)
 
-    # =================================
-    # UPLOAD DATASET
-    # =================================
     elif menu == "Upload Dataset":
 
         st.header("📂 Upload Tourism Dataset")
@@ -218,9 +179,6 @@ else:
             st.info("Using Current Dataset")
             st.dataframe(st.session_state.data.head())
 
-    # =================================
-    # TOURISM ANALYTICS
-    # =================================
     elif menu == "Tourism Analytics":
 
         st.header("📊 Tourism Analytics Dashboard")
@@ -274,9 +232,6 @@ else:
 
         st.plotly_chart(fig2, use_container_width=True)
 
-    # =================================
-    # REVENUE ANALYSIS
-    # =================================
     elif menu == "Revenue Analysis":
 
         st.header("💰 Revenue Analysis")
@@ -307,9 +262,6 @@ else:
             )
         )
 
-    # =================================
-    # BEST TIME TO VISIT
-    # =================================
     elif menu == "Best Time to Visit":
 
         st.header("🌤 Best Time to Visit")
@@ -379,9 +331,6 @@ else:
 
         st.plotly_chart(fig2, use_container_width=True)
 
-    # =================================
-    # TOP LOCATIONS
-    # =================================
     elif menu == "Top Locations":
 
         st.header("🏆 Top Tourist Locations")
@@ -406,9 +355,6 @@ else:
 
         st.plotly_chart(fig, use_container_width=True)
 
-    # =================================
-    # ABOUT
-    # =================================
     elif menu == "About":
 
         st.header("About Project")
