@@ -1,0 +1,25 @@
+Year,Month,Location,Visitors,Revenue,Season
+2024,January,Manali,2500,500000,Winter
+2024,February,Manali,2800,560000,Winter
+2024,March,Shimla,3200,640000,Spring
+2024,April,Shimla,3500,700000,Summer
+2024,May,Dharamshala,4200,840000,Summer
+2024,June,Dharamshala,4600,920000,Summer
+2024,July,Spiti Valley,3000,600000,Monsoon
+2024,August,Spiti Valley,2700,540000,Monsoon
+2024,September,Bir Billing,3800,760000,Autumn
+2024,October,Bir Billing,4000,800000,Autumn
+2024,November,Manali,2900,580000,Winter
+2024,December,Manali,3400,680000,Winter
+2025,January,Manali,3000,600000,Winter
+2025,February,Manali,3300,660000,Winter
+2025,March,Shimla,3800,760000,Spring
+2025,April,Shimla,4200,840000,Summer
+2025,May,Dharamshala,5000,1000000,Summer
+2025,June,Dharamshala,5400,1080000,Summer
+2025,July,Spiti Valley,3500,700000,Monsoon
+2025,August,Spiti Valley,3200,640000,Monsoon
+2025,September,Bir Billing,4500,900000,Autumn
+2025,October,Bir Billing,4800,960000,Autumn
+2025,November,Manali,3600,720000,Winter
+2025,December,Manali,4200,840000,Winter
