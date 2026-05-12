@@ -129,7 +129,7 @@ else:
     if menu == "Home":
 
         st.image(
-            "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+            "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200",
             use_container_width=True
         )
 
