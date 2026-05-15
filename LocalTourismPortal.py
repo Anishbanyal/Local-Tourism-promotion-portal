@@ -9,7 +9,7 @@ st.set_page_config(
     layout="wide"
 )
 
-conn = sqlite3.connect("tourism_users.db", check_same_thread=False)
+conn = sqlite3.connect("tourism_users_data.db", check_same_thread=False)
 cursor = conn.cursor()
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS users (
