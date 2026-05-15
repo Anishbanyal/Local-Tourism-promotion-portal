@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect("tourism_users.db")
+conn = sqlite3.connect("tourism_user_data.db")
 cursor = conn.cursor()
 
 cursor.execute("SELECT * FROM users")
