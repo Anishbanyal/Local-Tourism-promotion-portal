@@ -190,7 +190,7 @@ else:
                 return ''
 
             st.dataframe(
-                df.style.applymap(highlight_missing)
+                df.style.map(highlight_missing)
             )
 
 
